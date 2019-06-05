@@ -24,7 +24,8 @@
                 swiperOption: {
                     pagination: {
                         el: '.swiper-pagination'
-                    }
+                    },
+                    loop: true
                 },
                 swiperList: [
                     { id: 101, imgUrl: 'http://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20193/87a224d0349d94a11e97f31aa1aba4f5.jpg_750x200_1f78af87.jpg' },
