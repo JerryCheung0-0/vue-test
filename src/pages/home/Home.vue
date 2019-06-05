@@ -1,8 +1,9 @@
 <template>
-  <div>
-    <home-header />
-    <home-swiper />
-  </div>
+    <div>
+        <home-header />
+        <home-swiper />
+        <div>test</div>
+    </div>
 </template>
 
 <script>
