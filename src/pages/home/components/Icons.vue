@@ -1,12 +1,12 @@
 <template>
   <div class="icons">
     <swiper :options="swiperOption">
-      <swiper-slide v-for="item of swiperList" :key="item.id">
-        <div class="icon" v-for="(icon,index) of item.iconList" :key="index">
+      <swiper-slide v-for="page of pages" :key="page.id">
+        <div v-for="(icon,index) of page.list" :key="index" class="icon">
           <div class="icon-img">
             <img class="icon-img-content" :src="icon.imgUrl">
           </div>
-          <p class="icon-desc">{{icon.tag}}</p>
+          <p class="icon-desc">{{ icon.tag }}</p>
         </div>
       </swiper-slide>
       <div slot="pagination" class="swiper-pagination icon-pagination" />
@@ -24,32 +24,37 @@
             el: '.swiper-pagination'
           }
         },
-        swiperList: [
-          {
-            id: 1, iconList: [
-              {tag: '景点门票', imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png'},
-              {tag: '广州必游', imgUrl: 'http://img1.qunarzz.com/piao/fusion/1804/ff/fdf170ee89594b02.png'},
-              {tag: '动植物园', imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/76/eb88861d78fb9902.png'},
-              {tag: '自然风光', imgUrl: 'http://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20193/a40ee278d67000f2a29d2e20f6a029b3.png'},
-              {tag: '珠江夜游', imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/3e/86314b2af03b7502.png'},
-              {tag: '长隆亲子月', imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/47/c2b659e048b11602.png'},
-              {tag: '长隆度假区', imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/47/c2b659e048b11602.png'},
-              {tag: '长隆度假区', imgUrl: 'http://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20193/a40ee278d67000f2a29d2e20f6a029b3.png'}
-            ]
-          },
-          {
-            id: 2, iconList: [
-              {tag: '珠江夜游', imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/3e/86314b2af03b7502.png'},
-              {tag: '长隆亲子月', imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/47/c2b659e048b11602.png'},
-              {tag: '长隆度假区', imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/47/c2b659e048b11602.png'},
-              {tag: '长隆度假区', imgUrl: 'http://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20193/a40ee278d67000f2a29d2e20f6a029b3.png'},
-              {tag: '珠江夜游', imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/3e/86314b2af03b7502.png'},
-              {tag: '长隆亲子月', imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/47/c2b659e048b11602.png'},
-              {tag: '长隆度假区', imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/47/c2b659e048b11602.png'},
-              {tag: '长隆度假区', imgUrl: 'http://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20193/a40ee278d67000f2a29d2e20f6a029b3.png'}
-            ]
-          }
+        iconList: [
+          {tag: '景点门票', imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png'},
+          {tag: '广州必游', imgUrl: 'http://img1.qunarzz.com/piao/fusion/1804/ff/fdf170ee89594b02.png'},
+          {tag: '动植物园', imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/76/eb88861d78fb9902.png'},
+          {tag: '自然风光', imgUrl: 'http://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20193/a40ee278d67000f2a29d2e20f6a029b3.png'},
+          {tag: '珠江夜游', imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/3e/86314b2af03b7502.png'},
+          {tag: '长隆亲子月', imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/47/c2b659e048b11602.png'},
+          {tag: '长隆度假区', imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/47/c2b659e048b11602.png'},
+          {tag: '长隆度假区', imgUrl: 'http://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20193/a40ee278d67000f2a29d2e20f6a029b3.png'},
+          {tag: '珠江夜游', imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/3e/86314b2af03b7502.png'},
+          {tag: '长隆亲子月', imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/47/c2b659e048b11602.png'},
+          {tag: '长隆度假区', imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/47/c2b659e048b11602.png'},
+          {tag: '长隆度假区', imgUrl: 'http://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20193/a40ee278d67000f2a29d2e20f6a029b3.png'},
+          {tag: '珠江夜游', imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/3e/86314b2af03b7502.png'},
+          {tag: '长隆亲子月', imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/47/c2b659e048b11602.png'},
+          {tag: '长隆度假区', imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/47/c2b659e048b11602.png'},
+          {tag: '长隆度假区', imgUrl: 'http://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20193/a40ee278d67000f2a29d2e20f6a029b3.png'}
         ]
+      }
+    },
+    computed: {
+      pages() {
+        const pages = []
+        this.iconList.forEach((item, index) => {
+          const i = Math.floor(index / 8)
+          if (!pages[i]) {
+            pages[i] = {id: i, list: []}
+          }
+          pages[i].list.push(item)
+        })
+        return pages
       }
     }
   }
