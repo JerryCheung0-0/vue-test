@@ -1,9 +1,9 @@
-const path = require('path');
+const path = require('path')
 const port = 8888
 const name = 'vue test' // page title
 
 function resolve(dir) {
-    return path.join(__dirname, dir);
+    return path.join(__dirname, dir)
 }
 module.exports = {
     lintOnSave: true,
