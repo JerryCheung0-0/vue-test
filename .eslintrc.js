@@ -16,12 +16,12 @@ module.exports = {
     rules: {
         'indent': 0,
         'vue/script-indent': [
-            'error', 4,
+            'error', 2,
             {
                 'baseIndent': 1
             }
         ],
-        "vue/html-indent":4,
+        "vue/html-indent":2,
         "vue/max-attributes-per-line": [2, {
             "singleline": 10,
             "multiline": {
@@ -194,10 +194,19 @@ module.exports = {
         'yield-star-spacing': [2, 'both'],
         'yoda': [2, 'never'],
         'prefer-const': 2,
-        'no-debugger': process.env.NODE_ENV === 'production' ? 2 : 0,
-        'object-curly-spacing': [2, 'always', {
+        // 'no-debugger': process.env.NODE_ENV === 'production' ? 2 : 0,
+        //此规则在对象文字的大括号内执行一致的间距，解构赋值和导入/导出说明符 https://cloud.tencent.com/developer/section/1135796
+        'object-curly-spacing': [0, 'always', {
             objectsInObjects: false
         }],
         'array-bracket-spacing': [2, 'never']
-    }
+    },
+    overrides:[
+        {
+            'files':['*.vue'],
+            'rules':{
+                'indent':'off'
+            }
+        }
+    ]
 }
