@@ -17,37 +17,22 @@
 <script>
   export default {
     name: 'HomeIcons',
+    props: {
+      list: Array
+    },
     data() {
       return {
         swiperOption: {
           pagination: {
             el: '.swiper-pagination'
           }
-        },
-        iconList: [
-          {tag: '景点门票', imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png'},
-          {tag: '广州必游', imgUrl: 'http://img1.qunarzz.com/piao/fusion/1804/ff/fdf170ee89594b02.png'},
-          {tag: '动植物园', imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/76/eb88861d78fb9902.png'},
-          {tag: '自然风光', imgUrl: 'http://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20193/a40ee278d67000f2a29d2e20f6a029b3.png'},
-          {tag: '珠江夜游', imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/3e/86314b2af03b7502.png'},
-          {tag: '长隆亲子月', imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/47/c2b659e048b11602.png'},
-          {tag: '长隆度假区', imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/47/c2b659e048b11602.png'},
-          {tag: '长隆度假区', imgUrl: 'http://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20193/a40ee278d67000f2a29d2e20f6a029b3.png'},
-          {tag: '珠江夜游', imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/3e/86314b2af03b7502.png'},
-          {tag: '长隆亲子月', imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/47/c2b659e048b11602.png'},
-          {tag: '长隆度假区', imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/47/c2b659e048b11602.png'},
-          {tag: '长隆度假区', imgUrl: 'http://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20193/a40ee278d67000f2a29d2e20f6a029b3.png'},
-          {tag: '珠江夜游', imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/3e/86314b2af03b7502.png'},
-          {tag: '长隆亲子月', imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/47/c2b659e048b11602.png'},
-          {tag: '长隆度假区', imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/47/c2b659e048b11602.png'},
-          {tag: '长隆度假区', imgUrl: 'http://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20193/a40ee278d67000f2a29d2e20f6a029b3.png'}
-        ]
+        }
       }
     },
     computed: {
       pages() {
         const pages = []
-        this.iconList.forEach((item, index) => {
+        this.list.forEach((item, index) => {
           const i = Math.floor(index / 8)
           if (!pages[i]) {
             pages[i] = {id: i, list: []}
