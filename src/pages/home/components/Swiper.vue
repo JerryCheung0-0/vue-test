@@ -18,7 +18,9 @@
   export default {
     name: 'HomeSwiper',
     props: {
-      list: Array
+      list: { type: Array, default() {
+        return []
+      }}
     },
     // 当在子组件里面定义变量(data)时,data一定是一个函数,而return返回的对象就是对应的变量
     // data()是一个es6写法，相当于data:function(){}

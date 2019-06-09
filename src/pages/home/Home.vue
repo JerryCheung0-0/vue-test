@@ -1,10 +1,10 @@
 <template>
   <div>
-    <home-header :city="city"/>
-    <home-swiper :list="swiperList"/>
-    <home-icons :list="iconList"/>
-    <home-recommend :list="recommendList"/>
-    <home-weekend :list="weekendList"/>
+    <home-header />
+    <home-swiper :list="swiperList" />
+    <home-icons :list="iconList" />
+    <home-recommend :list="recommendList" />
+    <home-weekend :list="weekendList" />
   </div>
 </template>
 
@@ -27,7 +27,6 @@
     },
     data() {
       return {
-        city: '',
         iconList: [],
         swiperList: [],
         recommendList: [],
@@ -44,7 +43,6 @@
       },
       getHomeDataSucc(res) {
         if (res.data) {
-          this.city = res.data.city
           this.iconList = res.data.iconList
           this.swiperList = res.data.swiperList
           this.recommendList = res.data.recommendList

@@ -167,11 +167,13 @@ module.exports = {
             }
         }],
         'padded-blocks': [2, 'never'],
-        'quotes': [2, 'single', {
+        //引号设置
+        'quotes': [1, 'single', {
             'avoidEscape': true,
             'allowTemplateLiterals': true
         }],
-        'semi': [2, 'never'],
+        //分号设置
+        'semi': [1, 'never'],
         'semi-spacing': [2, {
             'before': false,
             'after': true

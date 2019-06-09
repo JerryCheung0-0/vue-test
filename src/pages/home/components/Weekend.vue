@@ -23,7 +23,9 @@
   export default {
     name: 'HomeWeekend',
     props: {
-      list: Array
+      list: { type: Array, default() {
+        return []
+      }}
     }
   }
 </script>

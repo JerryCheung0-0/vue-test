@@ -18,7 +18,9 @@
   export default {
     name: 'HomeIcons',
     props: {
-      list: Array
+      list: { type: Array, default() {
+        return []
+      }}
     },
     data() {
       return {
